@@ -1,0 +1,50 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'sinatra'
+
+set :port,            3000
+set :root,            File.expand_path("../../test", __FILE__)
+set :public_folder,   settings.root
+
+class Sinatra::Application
+  def read_fixture(name, ext = "js")
+    File.read(File.expand_path("../../test/fixtures/#{name.to_s}.#{ext.to_s}", __FILE__))
+  end
+end
+
+before do
+  content_type "json/application"
+end
+
+get "/" do
+  redirect "/spec_runner.html"
+end
+
+get "/cart.js" do
+  read_fixture :cart
+end
+
+post "/cart/change.js" do
+  read_fixture :cart
+end
+
+post "/cart/clear.js" do
+  read_fixture :clear
+end
+
+get "/cart/shipping_rates.js" do
+  read_fixture :shipping_rates
+end
+
+post "/cart/add.js" do
+  read_fixture :add
+end
+
+get "/products/handle.js" do
+  read_fixture :product
+end
+
+get "/error.js" do
+  read_fixture :error
+end

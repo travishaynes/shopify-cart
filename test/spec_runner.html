@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BDD Tests</title>
+    <link type="text/css" href="/stylesheets/jasmine.css" rel="stylesheet"/>
+    <link type="text/css" href="/stylesheets/layout.css" rel="stylesheet"/>
+    
+    <script type="text/javascript" src="/javascripts/jasmine.js"></script>
+    <script type="text/javascript" src="/javascripts/jasmine-html.js"></script>
+    <script type="text/javascript" src="/javascripts/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="/javascripts/coffee-script.js"></script>
+    
+    <script type="text/javascript" src="/javascripts/underscore.js"></script>
+    <script type="text/javascript" src="/javascripts/shopify-ajax.js"></script>
+    
+    <script type="text/coffeescript" src="/specs/spec_helper.coffee"></script>
+    
+    <script type="text/template" id="item-template">
+      <tr>
+        <td>
+          <a href="{{ item.url }}">
+            <img src="{{ item.image }}" alt="{{ item.title }}" />
+          </a>
+        </td>
+        <td><a href="{{ item.url }}">{{ item.description }}</a></td>
+      </tr>
+    </script>
+    
+  </head>
+  <body>
+  </body>
+</html>
