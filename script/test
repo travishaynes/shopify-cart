@@ -17,6 +17,10 @@ before do
   content_type "json/application"
 end
 
+after do
+  puts request.env["rack.input"].read
+end
+
 get "/" do
   redirect "/spec_runner.html"
 end

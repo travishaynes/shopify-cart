@@ -1,0 +1,2 @@
+class ShopifyAjax.Controllers.CartController
+  

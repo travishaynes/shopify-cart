@@ -5,8 +5,11 @@ projectName   = "shopify-ajax"
 
 appFiles      = [
   'src/shopify-ajax.coffee',
+  'src/models/base.coffee',
+  'src/models/line_item.coffee',
   'src/models/cart.coffee',
-  'src/models/line_item.coffee'
+  'src/views/line_item_view.coffee',
+  'src/controllers/cart_controller.coffee'
 ]
 
 

@@ -1,23 +1,15 @@
-class ShopifyAjax.Models.LineItem
-  template: "#item-template"
-  
-  constructor: (item) ->
-    @grams              = item.grams
-    @handle             = item.handle
-    @id                 = item.id
-    @image              = item.image
-    @line_price         = item.line_price
-    @price              = item.price
-    @quantity           = item.quantity
-    @requires_shipping  = item.requires_shipping
-    @sku                = item.sku
-    @title              = item.title
-    @url                = item.url
-    @variant_id         = item.variant_id
-    @vendor             = item.vendor
-    
-    _.bindAll this
-  
-  render: () ->
-    _.template(jQuery(@template).html())
-      item: this
+class ShopifyAjax.Models.LineItem extends ShopifyAjax.Models.Base
+  defaults:
+    grams             : 0
+    handle            : ''
+    id                : 0
+    image             : ''
+    line_price        : 0
+    price             : 0
+    quantity          : 0
+    requires_shipping : true
+    sku               : ''
+    title             : ''
+    url               : ''
+    variant_id        : 0
+    vendor            : ''

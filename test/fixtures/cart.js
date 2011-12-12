@@ -34,7 +34,7 @@
     "requires_shipping": true,
     "total_price": 10000,
     "attributes": null,
-    "item_count": 2,
+    "item_count": 5,
     "note": null,
     "total_weight": 947
 }
