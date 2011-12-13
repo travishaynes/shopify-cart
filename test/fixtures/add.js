@@ -6,7 +6,7 @@
     "title": "amelia - medium",
     "url": "/products/amelia",
     "quantity": 2,
-    "id": 30104012,
+    "id": 30104010,
     "grams": 200,
     "sku": "",
     "vendor": "the candi factory",

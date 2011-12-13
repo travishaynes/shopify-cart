@@ -8,8 +8,9 @@ appFiles      = [
   'src/models/base.coffee',
   'src/models/line_item.coffee',
   'src/models/cart.coffee',
-  'src/views/line_item_view.coffee',
-  'src/controllers/cart_controller.coffee'
+  'src/views/base.coffee',
+  'src/views/cart_view.coffee',
+  'src/views/line_item_view.coffee'
 ]
 
 

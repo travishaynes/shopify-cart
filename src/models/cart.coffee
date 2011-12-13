@@ -43,6 +43,3 @@ class ShopifyAjax.Models.Cart extends ShopifyAjax.Models.Base
     ShopifyAjax.sync "POST", this, "/cart/change.js",
       data    : "id=#{id}"
       success : (data) -> cart.set(data)
-  
-window.Cart = new ShopifyAjax.Models.Cart()
-Cart.fetch()

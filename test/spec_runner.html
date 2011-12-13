@@ -13,20 +13,45 @@
     <script type="text/javascript" src="/javascripts/underscore.js"></script>
     <script type="text/javascript" src="/javascripts/shopify-ajax.js"></script>
     
+    <script type="text/coffeescript" src="/coffeescripts/models/cart.coffee"></script>
+    
+    <script type="text/coffeescript" src="/specs/models/cart_spec.coffee"></script>
+    <script type="text/coffeescript" src="/coffeescripts/test_app.coffee"></script>
     <script type="text/coffeescript" src="/specs/spec_helper.coffee"></script>
     
-    <script type="text/template" id="item-template">
-      <tr>
+    <script type="text/template" id="shopping-cart-template">
+      <dt>
+        Total Items: <span class="count">{{ cart.item_count }}</span>
+      </dt>
+      <dt>
+        Total Price: <span class="price">${{ cart.total_price / 100 }}</span>
+      </dt>
+      <table class="items">
+        <tr>
+          <th colspan="2">Description</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+        </tr>
+      </table>
+    </script>
+    
+    <script type="text/template" id="line-item-template">
+      <tr id="{{ item.id }}">
         <td>
           <a href="{{ item.url }}">
-            <img src="{{ item.image }}" alt="{{ item.title }}" />
+            <img width="64" height="64" src="{{ item.image }}" alt="{{ item.title }}" />
           </a>
         </td>
-        <td><a href="{{ item.url }}">{{ item.description }}</a></td>
+        <td><a href="{{ item.url }}">{{ item.title }}</a></td>
+        <td>${{ item.price / 100 }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>${{ item.line_price / 100 }}</td>
       </tr>
     </script>
     
   </head>
   <body>
+    <div id="shopping-cart"></div>
   </body>
 </html>

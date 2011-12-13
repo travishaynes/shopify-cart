@@ -4,8 +4,7 @@ class ShopifyAjax.Models.Base
   
   events:
     # override this event to be notified of any changes made to this model
-    changed: (obj, attr, value) ->
-      undefined
+    changed: (sender) -> undefined
   
   # use hasMany to define the one to many relationships for this model
   # example:
@@ -21,6 +20,7 @@ class ShopifyAjax.Models.Base
   
   # forward declarations
   attribtues: {}
+  
   _changed: false
   _changing: false
   
@@ -43,8 +43,8 @@ class ShopifyAjax.Models.Base
   initialize: (attributes, options) ->
     undefined
   
-  change: (obj, attr, value) ->
-    @events.changed(obj, attr, value) if _.isFunction(@events.changed)
+  change: (obj) ->
+    @events.changed(obj) if _.isFunction(@events.changed)
     @_changed = false
     this
   
@@ -68,7 +68,7 @@ class ShopifyAjax.Models.Base
       value = attrs[attr]
       
       # check relationships
-      if @hasMany[attr]?
+      if @hasMany? && @hasMany[attr]?
         model = eval("ShopifyAjax.Models.#{@hasMany[attr]}")
         for index of value
           value[index] = new model(value[index])
@@ -76,7 +76,6 @@ class ShopifyAjax.Models.Base
       unless _.isEqual(@attributes[attr], value)
         @attributes[attr] = value
         @_changed = true
-        @change(this, attr, value) unless alreadyChanging || options.silent
     
     # fire change event
     if @_changed && (!alreadyChanging && !options.silent)

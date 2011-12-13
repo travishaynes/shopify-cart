@@ -7,7 +7,6 @@ window.ShopifyAjax =
   
   Models      : {}
   Views       : {}
-  Controllers : {}
   
   # synchronizes AJAX commands between all resources
   sync: (type, model, url, options = {}) ->
