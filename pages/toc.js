@@ -1,1 +1,1 @@
-[ 'about', 'test' ]
+[ 'summary' ]
