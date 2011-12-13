@@ -1,7 +1,7 @@
 /* Unobtrusively adds the "Fork me on Github" ribbon to the document. */
 
 $(document).ready(function(){
-  var ribbonSrc   = "/images/forkme.png",
+  var ribbonSrc   = "./images/forkme.png",
       ribbonAlt   = "Fork me on Github",
       forkmeHref  = "https://github.com/travishaynes/shopify-cart",
       $forkme     = $("<a>"),
