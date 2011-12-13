@@ -2,7 +2,7 @@
 _.templateSettings =
   interpolate: /\{\{(.+?)\}\}/g
 
-window.ShopifyAjax =
+window.ShopifyCart =
   VERSION     : '0.0.1'
   
   Models      : {}

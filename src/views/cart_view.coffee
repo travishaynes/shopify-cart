@@ -1,4 +1,4 @@
-class ShopifyAjax.Views.CartView extends ShopifyAjax.Views.Base
+class ShopifyCart.Views.CartView extends ShopifyCart.Views.Base
   el    : "#shopping-cart"
   model : null
   
@@ -19,7 +19,7 @@ class ShopifyAjax.Views.CartView extends ShopifyAjax.Views.Base
     
     # render the line items
     _.each @model.attributes.items, (item) ->
-      new ShopifyAjax.Views.LineItemView
+      new ShopifyCart.Views.LineItemView
         el   : "#shopping-cart table"
         model: item
     

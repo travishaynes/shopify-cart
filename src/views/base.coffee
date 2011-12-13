@@ -1,4 +1,4 @@
-class ShopifyAjax.Views.Base
+class ShopifyCart.Views.Base
   model   : null
   el      : null
   

@@ -1,4 +1,4 @@
-class ShopifyAjax.Models.Cart extends ShopifyAjax.Models.Base
+class ShopifyCart.Models.Cart extends ShopifyCart.Models.Base
   defaults:
     attributes        : null
     item_count        : 0
@@ -18,18 +18,18 @@ class ShopifyAjax.Models.Cart extends ShopifyAjax.Models.Base
   
   clear: ->
     cart = this
-    ShopifyAjax.sync "POST", this, "/cart/clear.js",
+    ShopifyCart.sync "POST", this, "/cart/clear.js",
       data    : null
       success : (data) ->
         cart.set data
   
   add: (id, quantity) ->
     cart = this
-    ShopifyAjax.sync "POST", this, "/cart/add.js",
+    ShopifyCart.sync "POST", this, "/cart/add.js",
       data    : "id=#{id}&quantity=#{quantity}"
       success : (data) ->
         # add the item to the cart
-        cart.attributes.items.push new ShopifyAjax.Models.LineItem(data)
+        cart.attributes.items.push new ShopifyCart.Models.LineItem(data)
         # trigger the change event for the new items
         cart.change(cart, 'items', cart.attributes.items)
         # update the items count
@@ -40,6 +40,6 @@ class ShopifyAjax.Models.Cart extends ShopifyAjax.Models.Base
   
   remove: (id) ->
     cart = this
-    ShopifyAjax.sync "POST", this, "/cart/change.js",
+    ShopifyCart.sync "POST", this, "/cart/change.js",
       data    : "id=#{id}"
       success : (data) -> cart.set(data)

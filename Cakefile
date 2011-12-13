@@ -1,10 +1,10 @@
 fs            = require 'fs'
 {exec}        = require 'child_process'
 util          = require 'util'
-projectName   = "shopify-ajax"
+projectName   = "shopify-cart"
 
 appFiles      = [
-  'src/shopify-ajax.coffee',
+  "src/#{projectName}.coffee",
   'src/models/base.coffee',
   'src/models/line_item.coffee',
   'src/models/cart.coffee',

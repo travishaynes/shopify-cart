@@ -11,9 +11,9 @@ describe "window.Cart", ->
   it "should have 2 line items", ->
     expect(Cart.attributes.items.length).toEqual 2
   describe "first line item", ->
-    it "should be a ShopifyAjax.Models.LineItem", ->
+    it "should be a ShopifyCart.Models.LineItem", ->
       item = Cart.attributes.items[0]
-      expect(item.__proto__.__proto__.__proto__.isPrototypeOf(ShopifyAjax.Models.LineItem)).toBeTruthy
+      expect(item.__proto__.__proto__.__proto__.isPrototypeOf(ShopifyCart.Models.LineItem)).toBeTruthy
     it "should have the attributes defined in the cart.js fixture", ->
       item = Cart.attributes.items[0]
       expect(item.attributes.handle).toEqual "aquarius"
@@ -30,9 +30,9 @@ describe "window.Cart", ->
       expect(item.attributes.image).toEqual "http://static.shopify.com/s/files/1/0040/7092/products/aquarius_1.gif?1268045506"
       expect(item.attributes.variant_id).toEqual 30104042
   describe "the second line item", ->
-    it "should be a ShopifyAjax.Models.LineItem", ->
+    it "should be a ShopifyCart.Models.LineItem", ->
       item = Cart.attributes.items[1]
-      expect(item.__proto__.__proto__.__proto__.isPrototypeOf(ShopifyAjax.Models.LineItem)).toBeTruthy
+      expect(item.__proto__.__proto__.__proto__.isPrototypeOf(ShopifyCart.Models.LineItem)).toBeTruthy
     it "should have the attributes defined in the cart.js fixture", ->
       item = Cart.attributes.items[1]
       expect(item.attributes.handle).toEqual "amelia"

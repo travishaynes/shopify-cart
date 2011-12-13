@@ -1,3 +1,12 @@
+shopify-cart
+============
+
+This CoffeeScript library supplies structure to the
+[Shopify cart API](wiki.shopify.com/Ajax_API) by providing dynamic views, and
+models with key-value bindings and events that update automatically when the
+cart changes.
+
+
 Building
 ========
 

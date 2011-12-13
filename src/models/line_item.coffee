@@ -1,4 +1,4 @@
-class ShopifyAjax.Models.LineItem extends ShopifyAjax.Models.Base
+class ShopifyCart.Models.LineItem extends ShopifyCart.Models.Base
   defaults:
     grams             : 0
     handle            : ''

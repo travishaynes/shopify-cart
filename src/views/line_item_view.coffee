@@ -1,4 +1,4 @@
-class ShopifyAjax.Views.LineItemView extends ShopifyAjax.Views.Base
+class ShopifyCart.Views.LineItemView extends ShopifyCart.Views.Base
   tagName : "tr"
   
   initialize: (options) ->
@@ -8,6 +8,10 @@ class ShopifyAjax.Views.LineItemView extends ShopifyAjax.Views.Base
       changed: (obj) ->
         view.render()
     @render()
+  
+  remove: ->
+    jQuery("##{@model.attributes.id}").remove()
+    this
   
   render: ->
     # get the template for the line items

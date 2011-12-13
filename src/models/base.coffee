@@ -1,4 +1,4 @@
-class ShopifyAjax.Models.Base
+class ShopifyCart.Models.Base
   # override this when defining your model to provide default values
   defaults: {}
   
@@ -69,7 +69,7 @@ class ShopifyAjax.Models.Base
       
       # check relationships
       if @hasMany? && @hasMany[attr]?
-        model = eval("ShopifyAjax.Models.#{@hasMany[attr]}")
+        model = eval("ShopifyCart.Models.#{@hasMany[attr]}")
         for index of value
           value[index] = new model(value[index])
       
@@ -86,10 +86,10 @@ class ShopifyAjax.Models.Base
   
   fetch: ->
     model = this
-    ShopifyAjax.sync "GET", this, @url("GET"), success: (attributes) ->
+    ShopifyCart.sync "GET", this, @url("GET"), success: (attributes) ->
       model.set attributes
   
   save: ->
     model = this
-    ShopifyAjax.sync "POST", this, @url("POST"), success: (attributes) ->
+    ShopifyCart.sync "POST", this, @url("POST"), success: (attributes) ->
       model.set attributes

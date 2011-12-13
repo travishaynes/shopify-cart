@@ -2,6 +2,7 @@
 
 require 'rubygems'
 require 'sinatra'
+require 'json'
 
 set :port,            3000
 set :root,            File.expand_path("../../test", __FILE__)
@@ -10,6 +11,10 @@ set :public_folder,   settings.root
 class Sinatra::Application
   def read_fixture(name, ext = "js")
     File.read(File.expand_path("../../test/fixtures/#{name.to_s}.#{ext.to_s}", __FILE__))
+  end
+  
+  def cart
+    @cart ||= JSON.load(read_fixture :cart)
   end
 end
 
