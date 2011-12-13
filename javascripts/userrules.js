@@ -6,7 +6,7 @@ var _usrp = {
 	sso                 : {},
 	getVisitorId        : function() {return "";},
 	getAdditionalParams : function() {return "";},
-	placement           : "right",
+	placement           : "top",
 	color               : ["#f37500", "#f37500"]
 };
 

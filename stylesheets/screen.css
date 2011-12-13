@@ -71,10 +71,11 @@ html {
 /* line 9, ../sass/screen.sass */
 body {
   background: #fafaf0;
+  color: #404040;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/* line 14, ../sass/screen.sass */
+/* line 15, ../sass/screen.sass */
 #forkme > img {
   z-index: 101;
   position: absolute;
@@ -83,7 +84,7 @@ body {
   border: 0;
 }
 
-/* line 21, ../sass/screen.sass */
+/* line 22, ../sass/screen.sass */
 #header {
   -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
@@ -103,7 +104,7 @@ body {
   height: 40px;
   z-index: 100;
 }
-/* line 32, ../sass/screen.sass */
+/* line 33, ../sass/screen.sass */
 #header .logo {
   line-height: 40px;
   font-size: 16pt;
@@ -112,7 +113,7 @@ body {
   margin-left: 15px;
 }
 
-/* line 39, ../sass/screen.sass */
+/* line 40, ../sass/screen.sass */
 #left-nav {
   -moz-box-shadow: 0 5px 10px #777777;
   -webkit-box-shadow: 0 5px 10px #777777;
@@ -126,4 +127,40 @@ body {
   background: whiteSmoke;
   overflow-y: scroll;
   z-index: 99;
+}
+/* line 51, ../sass/screen.sass */
+#left-nav ul {
+  margin: 25px;
+}
+/* line 53, ../sass/screen.sass */
+#left-nav ul a {
+  text-decoration: none;
+  color: #0069d6;
+}
+/* line 56, ../sass/screen.sass */
+#left-nav ul a:hover {
+  text-decoration: underline;
+}
+
+/* line 59, ../sass/screen.sass */
+#main, #main .section {
+  position: fixed;
+  left: 250px;
+  top: 40px;
+  right: 0;
+  bottom: 0;
+}
+
+/* line 67, ../sass/screen.sass */
+#main .section {
+  display: none;
+  padding: 25px;
+  overflow: auto;
+}
+
+/* line 72, ../sass/screen.sass */
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 0.5em;
 }
