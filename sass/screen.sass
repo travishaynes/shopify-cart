@@ -1,14 +1,48 @@
 @import compass/reset
+@import compass/css3
+@import compass/css3/box-shadow
+@import compass/css3/gradient
 
 html
-  overflow-y: scroll
+  overflow: none
 
 body
   background: #fafaf0
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
 
 #forkme
   & > img
+    z-index: 101
     position: absolute
     top: 0
     right: 0
     border: 0
+
+#header
+  +box-shadow(0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1))
+  +linear-gradient(color-stops(#333, #222), top)
+  background-color: #222
+  background-repeat: repeat-x
+  position: fixed
+  left: 0
+  right: 0
+  height: 40px
+  z-index: 100
+  
+  .logo
+    line-height: 40px
+    font-size: 16pt
+    color: white
+    text-decoration: none
+    margin-left: 15px
+
+#left-nav
+  +box-shadow(0 5px 10px #777)
+  position: fixed
+  left: 0
+  top: 40px
+  bottom: 0
+  width: 250px
+  background: whiteSmoke
+  overflow-y: scroll
+  z-index: 99
