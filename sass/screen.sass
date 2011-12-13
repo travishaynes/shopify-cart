@@ -2,6 +2,12 @@
 @import compass/css3
 @import compass/css3/box-shadow
 @import compass/css3/gradient
+@import compass/css3/text-shadow
+
+
+$header-height: 40px
+$left-nav-width: 175px
+
 
 html
   overflow: none
@@ -10,6 +16,12 @@ body
   background: #fafaf0
   color: #404040
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+
+a
+  text-decoration: none
+  color: #0069D6
+  &:hover
+    text-decoration: underline
 
 #forkme
   & > img
@@ -27,50 +39,80 @@ body
   position: fixed
   left: 0
   right: 0
-  height: 40px
+  height: $header-height
   z-index: 100
   
   .logo
-    line-height: 40px
+    line-height: $header-height
     font-size: 16pt
     color: white
     text-decoration: none
     margin-left: 15px
 
 #left-nav
-  +box-shadow(0 5px 10px #777)
+  +box-shadow(0 10px 20px #777)
+  border-right: 1px solid #ccc
   position: fixed
   left: 0
-  top: 40px
+  top: $header-height
   bottom: 0
-  width: 250px
-  background: whiteSmoke
-  overflow-y: scroll
+  width: $left-nav-width
+  background: #eeeeff
+  overflow-y: auto
   z-index: 99
   
-  ul
+  line-height: 1.25em
+  
+  a
+    font-size: 14px
+  
+  & > ul
     margin: 25px
-    a
-      text-decoration: none
-      color: #0069D6
-      font-size: 14px
-      &:hover
-        text-decoration: underline
+    & > li
+      margin-bottom: 10px
+      & > ol
+        margin-left: 30px
+        list-style-type: circle
 
 #main, #main .section
   position: fixed
-  left: 250px
-  top: 40px
+  left: $left-nav-width
+  top: $header-height
   right: 0
   bottom: 0
 
 #main
   .section
+    +text-shadow(1px 1px 1px #f0f0fa)
     display: none
     padding: 25px
     overflow: auto
-
-h1
-  font-size: 24px
-  font-weight: bold
-  margin-bottom: 0.5em
+    h1
+      font-size: 24px
+    h2
+      margin-top: 2em
+    h1, h2
+      font-weight: bold
+      margin-bottom: 0.75em
+    p
+      line-height: 1.4em
+      margin-bottom: 0.75em
+    pre, p code, ul > li > h3
+      +border-radius(3px)
+      +text-shadow(none)
+      font: 100% "Courier New", "Andale Mono", monospace
+      font-weight: inherit
+      background-color: #f0f0ff
+      border: 1px solid #ddd
+      padding: 1px 5px
+    pre
+      +border-radius(0)
+      background: #f7f7ff
+      margin: 25px
+      padding: 5px 10px
+      font-size: 0.9em
+    ul > li
+      p
+        margin: 16px
+      h3
+        line-height: 2em

@@ -1,0 +1,93 @@
+<h1>Models</h1>
+
+<h2>Summary</h2>
+<p>
+  Models are the heart of the shopify-cart library. They contain the interactive
+  data as well as a large part of the logic surrounding it, and  provide a basic
+  set of functionality for managing changes to the shopping cart.
+</p>
+
+<div id="models_base">
+  <h2>Base</h2>
+  <p>
+    All of the models descend from <code>ShopifyCart.Models.Base</code>
+    providing the following variables and methods:
+    <ul>
+      <li>
+        <h3>attributes</h3>
+        <p>
+          A hash that contains all of the model's properties. This variable
+          should never be accessed directly. Instead use the <code>get</code> or
+          <code>set</code> methods.
+        </p>
+      </li>
+      <li>
+        <h3>defaults</h3>
+        <p>
+          A hash that contains all of the default properties for a new model.
+        </p>
+      </li>
+      <li>
+        <h3>change(model)</h3>
+        <p>
+          This is triggered when an attribute in the model changes, and can be
+          called to manually update anything bound to the model's
+          <code>changed</code> event.
+        </p>
+      </li>
+      <li>
+        <h3>events</h3>
+        <p>
+          So far there's only one event that's being used by shopify-cart:
+          The <code>changed</code> event. Bind to this event to be notified of
+          any changes to the model's attributes.
+        </p>
+      </li>
+      <li>
+        <h3>fetch()</h3>
+        <p>
+          Call this method to fetch the shopping cart from the Shopify store.
+        </p>
+      </li>
+      <li>
+        <h3>get(name)</h3>
+        <p>
+          Gets an attribute of the model.
+        </p>
+      </li>
+      <li>
+        <h3>save()</h3>
+        <p>
+          Saves the model's data on the server.
+        </p>
+      </li>
+      <li>
+        <h3>set(name, value)</h3>
+        <p>
+          Sets an attribute of the model.
+        </p>
+      </li>
+      <li>
+        <h3>toJSON()</h3>
+        <p>
+          Converts the model's attributes to JSON.
+        </p>
+      </li>
+      <li>
+        <h3>url(method)</h3>
+        <p>
+          Override this method to provide urls for each method. So far only
+          GET and POST are being used.
+        </p>
+      </li>
+    </ul>
+  </p>
+</div>
+
+<div id="models_cart">
+  <h2>Cart</h2>
+</div>
+
+<div id="models_lineitem">
+  <h2>LineItem</h2>
+</div>

@@ -63,19 +63,29 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 6, ../sass/screen.sass */
+/* line 12, ../sass/screen.sass */
 html {
   overflow: none;
 }
 
-/* line 9, ../sass/screen.sass */
+/* line 15, ../sass/screen.sass */
 body {
   background: #fafaf0;
   color: #404040;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/* line 15, ../sass/screen.sass */
+/* line 20, ../sass/screen.sass */
+a {
+  text-decoration: none;
+  color: #0069d6;
+}
+/* line 23, ../sass/screen.sass */
+a:hover {
+  text-decoration: underline;
+}
+
+/* line 27, ../sass/screen.sass */
 #forkme > img {
   z-index: 101;
   position: absolute;
@@ -84,7 +94,7 @@ body {
   border: 0;
 }
 
-/* line 22, ../sass/screen.sass */
+/* line 34, ../sass/screen.sass */
 #header {
   -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
@@ -104,7 +114,7 @@ body {
   height: 40px;
   z-index: 100;
 }
-/* line 33, ../sass/screen.sass */
+/* line 45, ../sass/screen.sass */
 #header .logo {
   line-height: 40px;
   font-size: 16pt;
@@ -113,55 +123,108 @@ body {
   margin-left: 15px;
 }
 
-/* line 40, ../sass/screen.sass */
+/* line 52, ../sass/screen.sass */
 #left-nav {
-  -moz-box-shadow: 0 5px 10px #777777;
-  -webkit-box-shadow: 0 5px 10px #777777;
-  -o-box-shadow: 0 5px 10px #777777;
-  box-shadow: 0 5px 10px #777777;
+  -moz-box-shadow: 0 10px 20px #777777;
+  -webkit-box-shadow: 0 10px 20px #777777;
+  -o-box-shadow: 0 10px 20px #777777;
+  box-shadow: 0 10px 20px #777777;
+  border-right: 1px solid #cccccc;
   position: fixed;
   left: 0;
   top: 40px;
   bottom: 0;
-  width: 250px;
-  background: whiteSmoke;
-  overflow-y: scroll;
+  width: 175px;
+  background: #eeeeff;
+  overflow-y: auto;
   z-index: 99;
+  line-height: 1.25em;
 }
-/* line 51, ../sass/screen.sass */
-#left-nav ul {
-  margin: 25px;
-}
-/* line 53, ../sass/screen.sass */
-#left-nav ul a {
-  text-decoration: none;
-  color: #0069d6;
+/* line 66, ../sass/screen.sass */
+#left-nav a {
   font-size: 14px;
 }
-/* line 57, ../sass/screen.sass */
-#left-nav ul a:hover {
-  text-decoration: underline;
+/* line 69, ../sass/screen.sass */
+#left-nav > ul {
+  margin: 25px;
+}
+/* line 71, ../sass/screen.sass */
+#left-nav > ul > li {
+  margin-bottom: 10px;
+}
+/* line 73, ../sass/screen.sass */
+#left-nav > ul > li > ol {
+  margin-left: 30px;
+  list-style-type: circle;
 }
 
-/* line 60, ../sass/screen.sass */
+/* line 77, ../sass/screen.sass */
 #main, #main .section {
   position: fixed;
-  left: 250px;
+  left: 175px;
   top: 40px;
   right: 0;
   bottom: 0;
 }
 
-/* line 68, ../sass/screen.sass */
+/* line 85, ../sass/screen.sass */
 #main .section {
+  text-shadow: 1px 1px 1px #f0f0fa;
   display: none;
   padding: 25px;
   overflow: auto;
 }
-
-/* line 73, ../sass/screen.sass */
-h1 {
+/* line 90, ../sass/screen.sass */
+#main .section h1 {
   font-size: 24px;
+}
+/* line 92, ../sass/screen.sass */
+#main .section h2 {
+  margin-top: 2em;
+}
+/* line 94, ../sass/screen.sass */
+#main .section h1, #main .section h2 {
   font-weight: bold;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.75em;
+}
+/* line 97, ../sass/screen.sass */
+#main .section p {
+  line-height: 1.4em;
+  margin-bottom: 0.75em;
+}
+/* line 100, ../sass/screen.sass */
+#main .section pre, #main .section p code, #main .section ul > li > h3 {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+  text-shadow: none;
+  font: 100% "Courier New", "Andale Mono", monospace;
+  font-weight: inherit;
+  background-color: #f0f0ff;
+  border: 1px solid #dddddd;
+  padding: 1px 5px;
+}
+/* line 108, ../sass/screen.sass */
+#main .section pre {
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  -o-border-radius: 0;
+  -ms-border-radius: 0;
+  -khtml-border-radius: 0;
+  border-radius: 0;
+  background: #f7f7ff;
+  margin: 25px;
+  padding: 5px 10px;
+  font-size: 0.9em;
+}
+/* line 115, ../sass/screen.sass */
+#main .section ul > li p {
+  margin: 16px;
+}
+/* line 117, ../sass/screen.sass */
+#main .section ul > li h3 {
+  line-height: 2em;
 }
