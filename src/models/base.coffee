@@ -19,7 +19,7 @@ class ShopifyCart.Models.Base
   url: (method) -> undefined
   
   # forward declarations
-  attribtues: {}
+  attributes: {}
   
   _changed: false
   _changing: false
